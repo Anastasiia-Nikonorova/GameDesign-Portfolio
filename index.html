@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#456b79">
+<meta name="description" content="Anastasiia Nikonorova — Game Designer. Selected work in expedition design, level and content design, events and LiveOps.">
+<title>Anastasiia Nikonorova | Game Design Portfolio</title>
+<style>
+:root{--teal:#456b79;--teal-light:#547784;--teal-dark:#385a67;--pink:#e1acc7;--plum:#6f0b49;--cream:#f4ece6;--white:#fffaf8;--line:rgba(244,236,230,.23);--faint:rgba(244,236,230,.075);--radius:22px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:86px}
+body{margin:0;background:var(--teal);color:var(--white);font-family:Inter,"Helvetica Neue",Arial,sans-serif;line-height:1.55}
+button,a{font:inherit}button{cursor:pointer}a{text-decoration:none;color:inherit}a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--pink);outline-offset:4px}
+::selection{background:var(--pink);color:var(--plum)}
+.shell{width:min(1120px,calc(100% - 64px));margin:auto}
+header{position:sticky;top:0;z-index:30;background:rgba(69,107,121,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+.nav{min-height:74px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+.wordmark{font-weight:760;letter-spacing:-.3px;font-size:16px;white-space:nowrap}.wordmark strong{color:var(--pink)}
+.navlinks{display:flex;align-items:center;gap:27px;font-size:13px;font-weight:650}.navlinks a:hover{color:var(--pink)}.navcta{padding:10px 16px;background:var(--plum);border-radius:12px;color:var(--white)}
+.menu-toggle{display:none;border:1px solid var(--line);background:transparent;color:var(--cream);border-radius:9px;padding:7px 11px}
+.hero{position:relative;isolation:isolate;overflow:hidden;padding:91px 0 89px;min-height:580px}
+.hero .shell{position:relative;z-index:2}.eyebrow{display:inline-flex;gap:9px;align-items:center;color:var(--pink);font-size:12px;font-weight:760;letter-spacing:.13em;text-transform:uppercase}
+
+h1,h2,h3,p{margin-top:0}
+h1{font-size:clamp(59px,8vw,108px);line-height:.95;letter-spacing:-.066em;margin:25px 0 28px;font-weight:850;max-width:850px}h1 span{display:block;color:var(--pink)}
+.hero .eyebrow{font-size:clamp(19px,2.35vw,28px);letter-spacing:-.025em;line-height:1.2;text-transform:none}
+.hero-lead{font-size:clamp(19px,2.35vw,28px);letter-spacing:-.025em;margin:0 0 12px;color:var(--cream);font-weight:500}
+.hero-copy{font-size:16px;color:var(--cream);max-width:600px;opacity:.92}
+.roleline{font-size:13px;font-weight:700;color:var(--pink);margin-top:21px;letter-spacing:.03em}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:27px}.button{border:1px solid var(--plum);background:var(--plum);color:var(--white);display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:10px 18px;border-radius:11px;font-weight:750;font-size:13px}.button:hover{background:#861457}.button.outline{border-color:var(--pink);background:rgba(69,107,121,.3)}.button.outline:hover{background:rgba(225,172,199,.14)}
+/* Shapes echo the user's existing banner. */
+.blob{pointer-events:none;position:absolute;z-index:-1;top:-140px;right:4%;width:310px;height:310px;border-radius:50%;background:var(--plum);box-shadow:-225px 5px 0 -12px var(--plum)}
+.sunburst{pointer-events:none;position:absolute;left:max(3%,calc((100% - 1250px)/2));top:110px;width:98px;height:98px;background:repeating-conic-gradient(from 3deg,var(--plum) 0 5deg,transparent 5deg 11deg);border-radius:50%;opacity:.94;transform:translateX(-115px)}.sunburst:after{content:"";position:absolute;inset:29px;background:var(--plum);border-radius:50%}
+.cross{position:absolute;right:13%;top:255px;width:12px;height:40px;background:var(--plum);border-radius:7px;transform:rotate(45deg);opacity:.92}.cross:after{content:"";position:absolute;left:-14px;top:14px;width:40px;height:12px;background:var(--plum);border-radius:7px}
+.flower{position:absolute;right:8%;bottom:38px;width:107px;height:107px;opacity:.94}.petal{width:25px;height:54px;background:var(--plum);border-radius:50px;position:absolute;top:0;left:41px;transform-origin:12.5px 53px}.petal:nth-child(2){transform:rotate(45deg)}.petal:nth-child(3){transform:rotate(90deg)}.petal:nth-child(4){transform:rotate(135deg)}.petal:nth-child(5){transform:rotate(180deg)}.petal:nth-child(6){transform:rotate(225deg)}.petal:nth-child(7){transform:rotate(270deg)}.petal:nth-child(8){transform:rotate(315deg)}.flower:after{content:"";position:absolute;inset:38px;background:var(--teal);border-radius:100%}
+main section{scroll-margin-top:82px}.section{padding:65px 0;border-top:1px solid var(--line)}.section-heading{max-width:760px;margin-bottom:32px}.section-index{font-size:12px;color:var(--pink);font-weight:750;letter-spacing:.12em;text-transform:uppercase}.section h2{font-size:clamp(32px,4.5vw,53px);line-height:1.08;letter-spacing:-.055em;margin:11px 0 13px}.section-intro{color:var(--cream);opacity:.88;font-size:15px;max-width:720px;margin:0}
+.work-stack{display:grid;gap:19px}
+.case{background:rgba(244,236,230,.055);border:1px solid var(--line);border-radius:var(--radius);padding:29px}
+.case-header{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;margin-bottom:22px}.case-kicker{color:var(--pink);font-size:11px;font-weight:750;letter-spacing:.13em;text-transform:uppercase;margin-bottom:7px}.case h3{font-size:clamp(24px,3vw,34px);margin:0 0 7px;line-height:1.16;letter-spacing:-.045em}.case-summary{color:var(--cream);opacity:.9;max-width:710px;margin:0;font-size:14px}.case-role{background:var(--plum);border-radius:100px;padding:7px 12px;white-space:nowrap;font-size:12px;color:var(--white);font-weight:700}
+.case-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px}.case-tags span{font-size:10px;font-weight:750;letter-spacing:.02em;padding:6px 9px;border:1px solid rgba(225,172,199,.5);border-radius:999px;color:var(--pink);background:rgba(111,11,73,.15)}.case-body{display:grid;grid-template-columns:1fr .92fr;gap:28px;align-items:start}.label{font-size:11px;font-weight:770;letter-spacing:.12em;text-transform:uppercase;color:var(--pink);margin:0 0 12px}
+.bullet-list{padding-left:18px;margin:0;color:var(--white);font-size:14px}.bullet-list li{margin:0 0 10px}.bullet-list li::marker{color:var(--pink)}
+.mini-note{background:rgba(111,11,73,.19);padding:15px 17px;border-radius:12px;margin-top:19px}.mini-note b{color:var(--pink);display:block;font-size:12px;margin-bottom:5px}.mini-note p{font-size:13px;margin:0;color:var(--cream)}
+.media-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.media-grid .media:first-child{grid-column:span 2;min-height:200px}.media{border:1px solid rgba(244,236,230,.22);background:linear-gradient(135deg,rgba(225,172,199,.11),rgba(111,11,73,.18));border-radius:13px;position:relative;overflow:hidden;min-height:136px;text-align:left;padding:15px;display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start;color:var(--white);cursor:default;gap:4px}.media .graphic{position:absolute;inset:0;background:linear-gradient(28deg,transparent 48%,rgba(225,172,199,.14) 48% 49%,transparent 50%),repeating-linear-gradient(90deg,transparent 0 33px,rgba(244,236,230,.035) 34px 35px);pointer-events:none}.media .pic{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.media.has-image{cursor:zoom-in}.media.has-image .graphic{display:none}.media .caption-title{position:relative;z-index:1;font-weight:700;font-size:13px;background:rgba(111,11,73,.83);border-radius:6px;padding:5px 9px}.media .caption-small{position:relative;z-index:1;font-size:11px;color:var(--cream);background:rgba(69,107,121,.83);border-radius:6px;padding:4px 7px}
+.media-hint{color:var(--cream);opacity:.8;margin:8px 0 0;font-size:11px}
+#atlantis .media-grid .media:first-child{aspect-ratio:1493/827;min-height:0;background:rgba(20,43,53,.72)}
+#atlantis .media-grid .media:first-child .pic{object-fit:contain}
+details{margin-top:18px;background:rgba(69,107,121,.31);border:1px solid var(--line);border-radius:12px;padding:0 18px}summary{padding:13px 1px;font-size:13px;font-weight:750;cursor:pointer;color:var(--pink)}.expanded{border-top:1px solid var(--line);padding:15px 0 18px}.expanded p,.expanded li{font-size:13px;color:var(--cream)}.expanded p:last-child{margin-bottom:0}.expanded ol{padding-left:18px;margin:0}.expanded li{margin-bottom:8px}
+.eventlinks{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.eventlinks a{font-size:12px;border:1px solid var(--line);border-radius:8px;padding:6px 9px;color:var(--cream)}.eventlinks a:hover{border-color:var(--pink);color:var(--pink)}
+.grid-two{display:grid;grid-template-columns:1fr 1fr;gap:22px}.about-card{border:1px solid var(--line);background:rgba(244,236,230,.055);border-radius:17px;padding:25px}.about-card h3{font-size:22px;letter-spacing:-.03em;margin:0 0 14px}.about-card p{font-size:14px;color:var(--cream)}.skills{display:flex;gap:8px;flex-wrap:wrap}.skill{border:1px solid rgba(225,172,199,.55);color:var(--cream);font-size:12px;border-radius:50px;padding:6px 10px}
+.timeline{display:grid;gap:0}.job{display:grid;grid-template-columns:150px 1fr;gap:18px;padding:15px 0;border-bottom:1px solid var(--line)}.job:last-child{border-bottom:0}.job time{font-size:12px;color:var(--pink);font-weight:700}.job strong{font-size:15px}.job p{color:var(--cream);opacity:.84;font-size:13px;margin:3px 0 0}
+.contact-panel{background:var(--plum);border-radius:23px;padding:32px 36px;display:flex;justify-content:space-between;gap:22px;align-items:center}.contact-panel h2{font-size:clamp(27px,4vw,44px);margin:0 0 9px}.contact-actions{display:flex;flex-direction:column;gap:9px;align-items:stretch;justify-content:center;min-width:174px}.contact-actions .button{width:100%}.contact-panel p{color:var(--cream);margin:0}.contact-panel .button{background:var(--pink);color:var(--plum);border-color:var(--pink);white-space:nowrap}.email-display{display:flex;flex-direction:column;gap:2px;border:1px solid rgba(225,172,199,.6);border-radius:11px;padding:9px 14px;background:rgba(244,236,230,.07);min-width:230px}.email-label{font-size:11px;color:var(--pink);font-weight:750;letter-spacing:.06em}.email-display a{font-size:14px;color:var(--white);font-weight:700;word-break:break-word}.email-display a:hover{text-decoration:underline;text-decoration-color:var(--pink)}
+footer{padding:26px 0;color:var(--cream);font-size:12px;border-top:1px solid var(--line)}footer .shell{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+dialog{background:var(--teal-dark);border:1px solid var(--pink);border-radius:14px;padding:14px;color:var(--white);max-width:min(92vw,1200px)}dialog::backdrop{background:rgba(23,29,39,.84)}dialog img{display:block;max-width:calc(92vw - 40px);max-height:80vh;object-fit:contain}dialog .dialog-close{float:right;margin-bottom:10px;border:0;border-radius:8px;padding:8px 14px;background:var(--plum);color:var(--white)}
+#lightboxImage{transform-origin:center center;cursor:grab;user-select:none;-webkit-user-drag:none;touch-action:none}#lightboxImage.dragging{cursor:grabbing}#lightboxImage:not(.dragging){transition:transform .15s ease}
+@media(max-width:900px){.shell{width:min(100% - 42px,1120px)}.sunburst{left:-5%;top:115px;transform:none}.blob{width:250px;height:250px;top:-125px;right:-4%;box-shadow:-165px 22px 0 -11px var(--plum)}.case-body{gap:19px}.case{padding:23px}.flower{right:6%}}
+@media(max-width:720px){.nav{min-height:68px}.menu-toggle{display:block}.navlinks{position:absolute;display:none;left:0;right:0;top:68px;background:var(--teal-dark);border-bottom:1px solid var(--line);padding:20px 24px;flex-direction:column;align-items:flex-start}.navlinks.open{display:flex}.hero{padding:70px 0 66px;min-height:520px}.hero-copy{max-width:490px}.sunburst{width:62px;height:62px;left:auto;right:20px;top:160px;opacity:.4}.sunburst:after{inset:18px}.flower{width:68px;height:68px;right:20px;bottom:25px;opacity:.52}.petal{width:16px;height:36px;left:26px;transform-origin:8px 34px}.flower:after{inset:24px}.cross{display:none}.section{padding:49px 0}.case-body,.grid-two{grid-template-columns:1fr}.case-header{flex-direction:column;gap:9px}.case-role{align-self:start}.job{grid-template-columns:1fr;gap:5px}.contact-panel{flex-direction:column;align-items:start}.contact-actions{width:100%;justify-content:flex-start}.contact-actions .button{width:100%}}
+@media(max-width:420px){.shell{width:calc(100% - 34px)}.wordmark{font-size:14px}.hero h1{font-size:clamp(49px,13vw,67px)}.blob{width:185px;height:185px;box-shadow:-115px 15px 0 -7px var(--plum)}.hero-lead{font-size:20px}.media-grid .media:first-child{min-height:180px}.media{min-height:120px}.section h2{font-size:36px}.contact-panel{padding:24px}.case{padding:18px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+/* V5: New gallery between case studies and experience. */
+.gallery-heading{display:flex;gap:25px;justify-content:space-between;align-items:flex-end;flex-wrap:wrap}
+.gallery-heading>div:first-child{max-width:720px}
+.gallery-filters{display:flex;flex-wrap:wrap;gap:8px;padding-bottom:6px}
+.gallery-filter{border:1px solid rgba(244,236,230,.38);padding:10px 14px;background:rgba(244,236,230,.035);color:var(--cream);border-radius:100px;font-size:12px;font-weight:700;white-space:nowrap;transition:background .2s,border-color .2s}
+.gallery-filter:hover{border-color:var(--pink);color:var(--pink)}
+.gallery-filter.active{background:var(--plum);border-color:var(--plum);color:var(--white)}
+.location-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin-top:25px}
+.gallery-tile{position:relative;min-height:225px;aspect-ratio:4/3;background:linear-gradient(135deg,#547784,#385a67);border:1px solid rgba(244,236,230,.4);border-radius:15px;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;text-align:left;align-items:flex-start;color:var(--white);padding:16px;isolation:isolate;transition:transform .2s,border-color .2s}
+.gallery-tile:before{content:"";position:absolute;z-index:-1;inset:0;background:radial-gradient(circle at 85% 18%,rgba(225,172,199,.23),transparent 38%),repeating-linear-gradient(60deg,transparent 0 54px,rgba(255,255,255,.035) 55px 56px)}
+.gallery-tile:hover{transform:translateY(-3px);border-color:var(--pink)}
+.gallery-placeholder{display:flex;align-items:center;justify-content:center;color:rgba(244,236,230,.55);font-size:37px;font-weight:850;letter-spacing:-2px;border:1px solid rgba(244,236,230,.25);width:75px;height:75px;border-radius:16px}
+.gallery-caption{z-index:1;display:flex;flex-direction:column;gap:1px;background:rgba(111,11,73,.85);padding:9px 12px;border-radius:9px;max-width:100%}
+.gallery-caption b{font-size:14px}.gallery-caption small{color:#fae5f0;font-size:11px}
+.gallery-tile .gallery-pic{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-1}
+.gallery-tile.has-image:first-child:after{content:"Click to enlarge";position:absolute;top:18px;right:14px;color:rgba(255,250,248,.8);font-size:10px;letter-spacing:.02em;background:rgba(111,11,73,.85);padding:5px 9px;border-radius:7px}
+.gallery-tile.has-image .gallery-placeholder{visibility:hidden}
+.gallery-tile[hidden]{display:none!important}
+.gallery-controls{margin-top:24px;display:flex;align-items:center;justify-content:center;gap:17px;flex-wrap:wrap}
+.gallery-count{color:var(--cream);font-size:12px;opacity:.86}
+.gallery-footnote{margin:14px 0 0;color:var(--cream);opacity:.84;font-size:12px}
+@media(max-width:800px){.location-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.gallery-tile{min-height:200px}}
+@media(max-width:490px){.location-grid{gap:11px}.gallery-tile{aspect-ratio:3/4;min-height:170px;padding:11px}.gallery-caption{padding:7px 8px}.gallery-caption b{font-size:12px}.gallery-caption small{font-size:10px}.gallery-placeholder{width:48px;height:48px;font-size:24px}.gallery-tile:after{font-size:9px;right:8px;top:9px}.gallery-filters{gap:6px}.gallery-filter{padding:8px 10px;font-size:11px}}
+
+
+.portfolio-kicker{display:inline-flex;align-items:center;gap:12px;padding:12px 21px 12px 16px;border:1px solid rgba(225,172,199,.55);border-radius:999px;background:rgba(111,11,73,.30);box-shadow:0 5px 28px rgba(18,31,39,.12);color:var(--white);font-size:clamp(19px,2.15vw,27px);font-weight:800;letter-spacing:.015em;line-height:1.2}
+.kicker-dot{display:inline-block;flex:none;width:11px;height:11px;border-radius:50%;background:var(--pink);box-shadow:0 0 0 5px rgba(225,172,199,.16)}
+@media(max-width:490px){.portfolio-kicker{font-size:19px;padding:10px 15px}.case-role{gap:7px;font-size:11px}}
+</style>
+</head>
+<body>
+<header><div class="shell nav"><a href="#top" class="wordmark">Anastasiia <strong>Nikonorova</strong></a><button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">Menu ☰</button><nav class="navlinks" id="navlinks" aria-label="Main navigation"><a href="#work">Projects</a><a href="#gallery">Gallery</a><a href="#experience">Experience</a><a href="#about">About</a><a href="#contact" class="navcta">Contact</a></nav></div></header>
+<main>
+<section class="hero" id="top">
+ <div class="blob" aria-hidden="true"></div><div class="sunburst" aria-hidden="true"></div><div class="cross" aria-hidden="true"></div><div class="flower" aria-hidden="true"><i class="petal"></i><i class="petal"></i><i class="petal"></i><i class="petal"></i><i class="petal"></i><i class="petal"></i><i class="petal"></i><i class="petal"></i></div>
+ <div class="shell"><div class="portfolio-kicker"><span class="kicker-dot" aria-hidden="true"></span><span>Game Design Portfolio</span></div><h1>Anastasiia<span>Nikonorova</span></h1><p class="hero-lead">From concept to player experience</p><p class="hero-copy">Game Designer working across level and content design, recurring game events, progression balancing, and location implementation.</p><p class="roleline">Level &amp; Content Design &nbsp; · &nbsp; Events &amp; LiveOps</p><div class="actions"><a class="button" href="#work">Explore selected work ↓</a><a class="button outline" href="#contact">Get in touch ↗</a></div></div>
+</section>
+<section class="section" id="work"><div class="shell">
+ <div class="section-heading"><div class="section-index">01 / Selected work</div><h2>Different design challenges. One creative approach.</h2><p class="section-intro">Selected commercial game work, from expedition content and LiveOps to technical location implementation and hidden-object level design. Each case distinguishes my work from the broader team's contribution.</p></div>
+ <div class="work-stack">
+ <article class="case" id="atlantis">
+ <div class="case-header"><div>
+  <p class="case-kicker">Case 01 · Content / Events / LiveOps</p>
+  <h3>Atlantis Odyssey</h3>
+  <p class="case-summary">I designed and shipped expedition content end to end — story, quests, maps and cutscenes — and kept it engaging through feature implementation, progression balancing and LiveOps events.</p>
+  <div class="case-tags" aria-label="Design disciplines"><span>Expeditions</span><span>Quest &amp; Content Design</span><span>Balancing</span><span>LiveOps</span></div>
+ </div><span class="case-role">Game Designer · VIZOR · Aug 2022 – Feb 2025</span></div>
+ <div class="case-body">
+  <div>
+   <p class="label">My contribution</p>
+   <ul class="bullet-list">
+    <li><strong>Expedition &amp; Game Design:</strong> Independently designed and developed 15+ expeditions from concept to release, including gameplay mechanics, quest structure, narrative, maps, and cutscenes. Contributed to 40+ additional expeditions.</li>
+    <li><strong>Content &amp; Feature Integration:</strong> Integrated new locations into existing game features, worked with gameplay systems, and managed content implementation.</li>
+    <li><strong>Content Production &amp; Launch:</strong> Wrote in-game announcements, prepared art briefs, integrated assets, and launched new locations.</li>
+    <li><strong>Balancing &amp; LiveOps:</strong> Balanced player progression, configured live events, and mentored 5+ game designers.</li>
+   </ul>
+   <div class="mini-note"><b>Featured Design Decision · Late-Expedition Pacing</b><p>Players were running out of content before the expedition ended. To improve retention and extend the finale, I introduced more engaging mechanics, including multi-layered path blockers and complex crafting chains, alongside progressively harder quests. This kept players engaged longer and encouraged greater resource investment to complete the location.</p></div>
+   <details><summary>Explore expedition features &amp; released locations</summary>
+    <div class="expanded">
+     <p><strong>What each expedition location included</strong></p>
+     <ol>
+      <li><strong>The location itself:</strong> A full released map showing the scope of an expedition environment.</li>
+      <li><strong>News announcement:</strong> Every location had its own announcement: I wrote the copy, requested the illustration, and implemented and launched it in game.</li>
+      <li><strong>Feature integration:</strong> New location content was added to existing game features. The Adventure Book is one example: six illustrated entries unlocked as players progressed.</li>
+      <li><strong>More released locations:</strong> Four more locations where I implemented various features while building them:
+       <div class="eventlinks"><a target="_blank" rel="noopener noreferrer" href="https://appshunter.io/events/6740479997">Location 01 ↗</a><a target="_blank" rel="noopener noreferrer" href="https://appshunter.io/events/6740479796">Location 02 ↗</a><a target="_blank" rel="noopener noreferrer" href="https://appshunter.io/events/6737517135">Location 03 ↗</a><a target="_blank" rel="noopener noreferrer" href="https://appshunter.io/events/6502859277">Location 04 ↗</a></div>
+      </li>
+     </ol>
+    </div>
+   </details>
+  </div>
+  <div>
+   <div class="media-grid">
+    <button class="media" data-src="assets/atlantis-01.png" data-title="Released expedition location"><span class="graphic"></span><span class="caption-title">Released content example</span></button>
+    <button class="media" data-src="assets/atlantis-02.jpg" data-title="In-game news announcement"><span class="graphic"></span><span class="caption-title">News announcement feature</span></button>
+    <button class="media" data-src="assets/atlantis-03.jpg" data-title="Adventure Book feature"><span class="graphic"></span><span class="caption-title">Adventure Book feature</span></button>
+   </div>
+   <p class="media-hint">Click an image to view it in full size.</p>
+  </div>
+ </div>
+</article>
+ <article class="case" id="fishdom"><div class="case-header"><div><p class="case-kicker">Case 02 · Level / Location Design</p><h3>Fishdom</h3><p class="case-summary">Turning blockouts and artwork into playable in-game locations in a proprietary editor — building new spaces and redesigning existing ones.</p></div><span class="case-role">Location Designer · PLAYRIX · Feb 2025 – Present</span></div>
+ <div class="case-body"><div><p class="label">My contribution</p><ul class="bullet-list"><li><strong>Build &amp; redesign:</strong> Built new locations and redesigned existing environments from blockouts, art assets and design requirements.</li><li><strong>Space &amp; navigation:</strong> Set up topology, spatial geometry, walkable areas and navigation paths.</li><li><strong>Asset adaptation:</strong> Adjusted visual assets where a location needed it.</li><li><strong>Features &amp; workflow:</strong> Adapted layouts for gameplay features and wrote internal workflow guidelines for the team.</li></ul><div class="mini-note"><b>What this case demonstrates</b><p>Technical level implementation, and visual and spatial consistency inside an established production pipeline.</p></div>
+ </div>
+ <div><div class="media-grid"><button class="media" data-src="assets/fishdom-01.png" data-title="New location"><span class="graphic"></span><span class="caption-title">New location</span></button><button class="media" data-src="assets/fishdom-04.png" data-title="Before Redesign"><span class="graphic"></span><span class="caption-title">Before Redesign</span></button><button class="media" data-src="assets/fishdom-05.png" data-title="After Redesign"><span class="graphic"></span><span class="caption-title">After Redesign</span></button></div><p class="media-hint">Click an image to view it in full size.</p></div></div></article>
+ <article class="case" id="hopa"><div class="case-header"><div><p class="case-kicker">Case 03 · Level Design / HOPA</p><h3>Manor Matters &amp; Mystery Matters</h3><p class="case-summary">Designed and implemented hidden-object levels for two HOPA titles: object lists, placement and difficulty balancing.</p></div><span class="case-role">Level Designer · VOKI · Feb 2021 – May 2022</span></div>
+ <div class="case-body"><div><p class="label">My contribution</p><ul class="bullet-list"><li><strong>Level content:</strong> Built hidden-object levels, choosing objects and their placement within level-design guidelines.</li><li><strong>Art collaboration:</strong> Wrote graphics requests and reviewed visual quality with artists.</li><li><strong>Balancing:</strong> Tuned level difficulty and documented the results.</li><li><strong>Ideas:</strong> Proposed new level mechanics and worked with programmers, animators, QA and production.</li></ul><div class="mini-note"><b>Design focus</b><p>Balancing object placement, scene composition and the clarity of hidden-object gameplay.</p></div>
+ <details><summary>View process and design considerations</summary><div class="expanded"><ol><li>Define the object list and placement according to level-design guidelines.</li><li>Request and review artwork with artists, checking that objects stay readable within the scene.</li><li>Balance difficulty through object placement and visual hierarchy.</li><li>Test with QA and the team, then refine and document the level.</li></ol></div></details></div>
+ <div><div class="media-grid"><button class="media" data-src="assets/manor-03.png" data-title="Level detail"><span class="graphic"></span><span class="caption-title">Object placement</span></button><button class="media" data-src="assets/manor-01.png" data-title="Hidden object level"><span class="graphic"></span><span class="caption-title">HOPA level</span></button><button class="media" data-src="assets/manor-02.png" data-title="Hidden object level"><span class="graphic"></span><span class="caption-title">HOPA level</span></button></div><p class="media-hint">Click an image to view it in full size.</p></div></div></article>
+ </div></div></section>
+
+<section class="section gallery-section" id="gallery"><div class="shell">
+ <div class="section-heading gallery-heading">
+  <div><div class="section-index">02 / Location gallery</div><h2>Locations I've worked on</h2><p class="section-intro">A visual selection of in-game environments from Fishdom and Atlantis Odyssey.</p></div>
+  <div class="gallery-filters" role="group" aria-label="Filter locations by project">
+   <button type="button" class="gallery-filter active" data-gallery-filter="all" aria-pressed="true">All locations</button>
+   <button type="button" class="gallery-filter" data-gallery-filter="fishdom" aria-pressed="false">Fishdom</button>
+   <button type="button" class="gallery-filter" data-gallery-filter="atlantis" aria-pressed="false">Atlantis Odyssey</button>
+  </div>
+ </div>
+ <div class="location-grid" id="locationGrid" aria-live="polite">
+   <button type="button" class="gallery-tile" data-project="fishdom" data-gallery-src="assets/fishdom-03.png" data-title="Fishdom · New Location"><span class="gallery-placeholder">01</span><span class="gallery-caption"><b>New Location</b><small>Fishdom</small></span></button>
+   <button type="button" class="gallery-tile" data-project="atlantis" data-gallery-src="assets/atlantis-07.jpg" data-title="Atlantis Odyssey · Calendar feature"><span class="gallery-placeholder">02</span><span class="gallery-caption"><b>Calendar feature</b><small>Atlantis Odyssey</small></span></button>
+   <button type="button" class="gallery-tile" data-project="fishdom" data-gallery-src="assets/fishdom-02.png" data-title="Fishdom · New Location"><span class="gallery-placeholder">03</span><span class="gallery-caption"><b>New Location</b><small>Fishdom</small></span></button>
+   <button type="button" class="gallery-tile" data-project="atlantis" data-gallery-src="assets/atlantis-02.jpg" data-title="Atlantis Odyssey · News announcement feature"><span class="gallery-placeholder">04</span><span class="gallery-caption"><b>News announcement feature</b><small>Atlantis Odyssey</small></span></button>
+   <button type="button" class="gallery-tile" data-project="fishdom" data-gallery-src="assets/fishdom-08.png" data-title="Fishdom · Redesigned Location"><span class="gallery-placeholder">05</span><span class="gallery-caption"><b>Redesigned Location</b><small>Fishdom</small></span></button>
+   <button type="button" class="gallery-tile" data-project="atlantis" data-gallery-src="assets/atlantis-03.jpg" data-title="Atlantis Odyssey · Adventure Book feature"><span class="gallery-placeholder">06</span><span class="gallery-caption"><b>Adventure Book feature</b><small>Atlantis Odyssey</small></span></button>
+   <button type="button" class="gallery-tile" data-project="fishdom" data-gallery-src="assets/fishdom-07.png" data-title="Fishdom · New Location" hidden=""><span class="gallery-placeholder">07</span><span class="gallery-caption"><b>New Location</b><small>Fishdom</small></span></button>
+   <button type="button" class="gallery-tile" data-project="atlantis" data-gallery-src="assets/atlantis-01.png" data-title="Atlantis Odyssey · Whole expedition event" hidden=""><span class="gallery-placeholder">08</span><span class="gallery-caption"><b>Whole expedition event</b><small>Atlantis Odyssey</small></span></button>
+   <button type="button" class="gallery-tile" data-project="fishdom" data-gallery-src="assets/fishdom-01.png" data-title="Fishdom · New Location" hidden=""><span class="gallery-placeholder">09</span><span class="gallery-caption"><b>New Location</b><small>Fishdom</small></span></button>
+   <button type="button" class="gallery-tile" data-project="atlantis" data-gallery-src="assets/atlantis-05.jpg" data-title="Atlantis Odyssey · New Location" hidden=""><span class="gallery-placeholder">10</span><span class="gallery-caption"><b>New Location</b><small>Atlantis Odyssey</small></span></button>
+   <button type="button" class="gallery-tile" data-project="fishdom" data-gallery-src="assets/fishdom-09.png" data-title="Fishdom · New Location"><span class="gallery-placeholder">11</span><span class="gallery-caption"><b>New Location</b><small>Fishdom</small></span></button>
+   <button type="button" class="gallery-tile" data-project="atlantis" data-gallery-src="assets/atlantis-04.jpg" data-title="Atlantis Odyssey · New Location" hidden=""><span class="gallery-placeholder">12</span><span class="gallery-caption"><b>New Location</b><small>Atlantis Odyssey</small></span></button>
+   <button type="button" class="gallery-tile" data-project="fishdom" data-gallery-src="assets/fishdom-04.png" data-title="Fishdom · Location Before Redesign" hidden=""><span class="gallery-placeholder">13</span><span class="gallery-caption"><b>Location Before Redesign</b><small>Fishdom</small></span></button>
+   <button type="button" class="gallery-tile" data-project="fishdom" data-gallery-src="assets/fishdom-06.png" data-title="Fishdom · Location Topology — Work in Progress" hidden=""><span class="gallery-placeholder">14</span><span class="gallery-caption"><b>Location Topology — Work in Progress</b><small>Fishdom</small></span></button>
+   <button type="button" class="gallery-tile" data-project="fishdom" data-gallery-src="assets/fishdom-05.png" data-title="Fishdom · Location After Redesign" hidden=""><span class="gallery-placeholder">15</span><span class="gallery-caption"><b>Location After Redesign</b><small>Fishdom</small></span></button>
+   <button type="button" class="gallery-tile" data-project="atlantis" data-gallery-src="assets/atlantis-06.png" data-title="Atlantis Odyssey · New Location Before Redesign" hidden=""><span class="gallery-placeholder">16</span><span class="gallery-caption"><b>New Location Before Redesign</b><small>Atlantis Odyssey</small></span></button>
+   <button type="button" class="gallery-tile" data-project="atlantis" data-gallery-src="assets/atlantis-09.png" data-title="Atlantis Odyssey · Location Topology — Work in Progress" hidden=""><span class="gallery-placeholder">17</span><span class="gallery-caption"><b>Location Topology — Work in Progress</b><small>Atlantis Odyssey</small></span></button>
+   <button type="button" class="gallery-tile" data-project="atlantis" data-gallery-src="assets/atlantis-08.png" data-title="Atlantis Odyssey · Redesigned Location" hidden=""><span class="gallery-placeholder">18</span><span class="gallery-caption"><b>Redesigned Location</b><small>Atlantis Odyssey</small></span></button>
+   <button type="button" class="gallery-tile" data-project="fishdom" data-gallery-src="assets/fishdom-store_01.jpg" data-title="Fishdom · Store" hidden=""><span class="gallery-placeholder">19</span><span class="gallery-caption"><b>Location Featured in Store Promotions</b><small>Fishdom</small></span></button>
+   <button type="button" class="gallery-tile" data-project="atlantis" data-gallery-src="assets/atlantis-store_01.jpg" data-title="Atlantis Odyssey · Store" hidden=""><span class="gallery-placeholder">20</span><span class="gallery-caption"><b>Location Featured in Store Promotions</b><small>Atlantis Odyssey</small></span></button>
+   <button type="button" class="gallery-tile" data-project="atlantis" data-gallery-src="assets/atlantis-store_02.jpg" data-title="Atlantis Odyssey · Store" hidden=""><span class="gallery-placeholder">21</span><span class="gallery-caption"><b>Location Featured in Store Promotions</b><small>Atlantis Odyssey</small></span></button>
+ </div>
+ <div class="gallery-controls"><button type="button" id="galleryMore" class="button outline" aria-expanded="false" aria-controls="locationGrid">View more locations ↓</button><span class="gallery-count" id="galleryCount" aria-live="polite">Showing 6 of 12 locations</span></div>
+</div></section>
+<section class="section" id="experience"><div class="shell"><div class="section-heading"><div class="section-index">03 / Experience</div><h2>Commercial game development experience</h2></div><div class="timeline">
+ <div class="job"><time>Feb 2025 – Present</time><div><strong>Location Designer · PLAYRIX</strong><p>Fishdom · Proprietary editor, topology, new locations, redesign, feature integration and guidelines.</p></div></div>
+ <div class="job"><time>Aug 2022 – Feb 2025</time><div><strong>Game Designer · VIZOR</strong><p>Atlantis Odyssey · Expeditions, narrative and quest content, balancing, event features, LiveOps and mentoring.</p></div></div>
+ <div class="job"><time>Feb 2021 – May 2022</time><div><strong>Level Designer · VOKI</strong><p>Manor Matters / Mystery Matters · HOPA level implementation, object placement and balancing.</p></div></div>
+ </div></div></section>
+<section class="section" id="about"><div class="shell"><div class="section-heading"><div class="section-index">04 / About</div><h2>Creative content. Structured design.</h2></div><div class="grid-two"><div class="about-card"><h3>About me</h3><p>I'm a Game Designer with 5+ years of experience in mobile free-to-play games, from content and event design to technical level implementation and progression balancing.</p><p>I enjoy building coherent player experiences by connecting narrative, gameplay rules, space, and production constraints.</p></div><div class="about-card"><h3>Core expertise</h3><div class="skills"><span class="skill">Game Design</span><span class="skill">Level &amp; Location Design</span><span class="skill">Content &amp; Quest Design</span><span class="skill">Event Design</span><span class="skill">LiveOps</span><span class="skill">Progression Balancing</span><span class="skill">GDD</span><span class="skill">Tiled</span><span class="skill">Unity</span><span class="skill">Jira</span><span class="skill">Asana</span><span class="skill">VS Code</span></div></div></div></div></section>
+<section class="section" id="contact"><div class="shell"><div class="contact-panel"><div><div class="eyebrow" style="color:#e1acc7">05 / Contact</div><h2>Let's talk games.</h2><p>Available to discuss Game Design, Content, Level Design and LiveOps opportunities.</p></div><div class="contact-actions"><div class="email-display"><span class="email-label">Email</span><a href="mailto:nastasvir@icloud.com" title="Email Anastasiia or copy this address">nastasvir@icloud.com</a></div><a class="button" href="https://www.linkedin.com/in/anastasiia-nikonorova-0628a21b4/" target="_blank" rel="noopener noreferrer" aria-label="Visit LinkedIn profile">LinkedIn ↗</a><a class="button" href="assets/Anastasiia_Nikonorova_CV.pdf" download="Anastasiia_Nikonorova_CV.pdf" aria-label="Download CV as PDF">Download CV ↓</a></div></div></div></section>
+</main>
+<footer><div class="shell"><span>© <span id="year">2026</span> Anastasiia Nikonorova</span><span>Game Design · Level &amp; Content Design · Events &amp; LiveOps</span></div></footer>
+<dialog id="lightbox" aria-label="Project screenshot viewer"><button class="dialog-close" type="button" id="closeLightbox">Close ✕</button><img id="lightboxImage" alt="Expanded project screenshot"></dialog>
+<script>
+const menuToggle=document.getElementById('menuToggle'); const menu=document.getElementById('navlinks');
+menuToggle.addEventListener('click',()=>{const on=menu.classList.toggle('open');menuToggle.setAttribute('aria-expanded',String(on))});
+menu.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{menu.classList.remove('open');menuToggle.setAttribute('aria-expanded','false')}));
+const dialog=document.getElementById('lightbox');const boxImage=document.getElementById('lightboxImage');
+let zoom=1,panX=0,panY=0,dragging=false,startX=0,startY=0;function updateImage(){boxImage.style.transform=`translate(${panX}px,${panY}px) scale(${zoom})`}boxImage.addEventListener('dragstart',e=>e.preventDefault());boxImage.addEventListener('wheel',e=>{e.preventDefault();zoom=Math.min(4,Math.max(1,zoom+(e.deltaY<0?.2:-.2)));if(zoom===1){panX=0;panY=0}updateImage()},{passive:false});boxImage.addEventListener('pointerdown',e=>{if(e.button!==0||zoom<=1)return;e.preventDefault();dragging=true;startX=e.clientX-panX;startY=e.clientY-panY;boxImage.classList.add('dragging');boxImage.setPointerCapture(e.pointerId)});boxImage.addEventListener('pointermove',e=>{if(!dragging)return;panX=e.clientX-startX;panY=e.clientY-startY;updateImage()});function stopDragging(){dragging=false;boxImage.classList.remove('dragging')}boxImage.addEventListener('pointerup',stopDragging);boxImage.addEventListener('pointercancel',stopDragging);boxImage.addEventListener('lostpointercapture',stopDragging);dialog.addEventListener('close',()=>{zoom=1;panX=0;panY=0;stopDragging();updateImage()});
+document.getElementById('closeLightbox').addEventListener('click',()=>dialog.close());dialog.addEventListener('click',e=>{if(e.target===dialog)dialog.close()});
+document.querySelectorAll('.media[data-src]').forEach(el=>{const src=el.getAttribute('data-src');const img=new Image();img.onload=()=>{img.className='pic';img.alt=el.getAttribute('data-title')||'Portfolio screenshot';el.prepend(img);el.classList.add('has-image');el.addEventListener('click',()=>{boxImage.src=src;boxImage.alt=img.alt;dialog.showModal()})};img.src=src;});
+
+// Location gallery: filters, six featured slots, progressive reveal, and lightbox.
+const galleryItems=Array.from(document.querySelectorAll('.gallery-tile'));
+const galleryFilters=Array.from(document.querySelectorAll('[data-gallery-filter]'));
+let activeGalleryFilter='all';
+let galleryExpanded=false;
+function updateGallery(){
+ const matching=galleryItems.filter(item=>activeGalleryFilter==='all'||item.dataset.project===activeGalleryFilter);
+ const visible=galleryExpanded?matching:matching.slice(0,6);
+ galleryItems.forEach(item=>{item.hidden=!visible.includes(item)});
+ const more=document.getElementById('galleryMore');
+ more.hidden=matching.length<=6;
+ more.textContent=galleryExpanded?'Show fewer locations ↑':'View more locations ↓';
+ more.setAttribute('aria-expanded',String(galleryExpanded));
+ document.getElementById('galleryCount').textContent=`Showing ${visible.length} of ${matching.length} locations`;
+ galleryFilters.forEach(button=>{
+   const selected=button.dataset.galleryFilter===activeGalleryFilter;
+   button.classList.toggle('active',selected);
+   button.setAttribute('aria-pressed',String(selected));
+ });
+}
+galleryFilters.forEach(button=>button.addEventListener('click',()=>{activeGalleryFilter=button.dataset.galleryFilter;galleryExpanded=false;updateGallery()}));
+document.getElementById('galleryMore').addEventListener('click',()=>{galleryExpanded=!galleryExpanded;updateGallery()});
+galleryItems.forEach(item=>{
+ const src=item.dataset.gallerySrc;
+ const image=new Image();
+ image.onload=()=>{
+   image.className='gallery-pic';image.alt=item.dataset.title||'Game location screenshot';
+   item.prepend(image);item.classList.add('has-image');
+   item.addEventListener('click',()=>{
+     boxImage.src=src;boxImage.alt=image.alt;dialog.showModal();
+   });
+ };
+ image.src=src;
+});
+updateGallery();
+
+document.getElementById('year').textContent=new Date().getFullYear();
+</script>
+
+
+</body>
+</html>
